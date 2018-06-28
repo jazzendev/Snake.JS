@@ -11,6 +11,8 @@
     let speed = step = 5;
     let previousFramTime = 0;
     let paused = false;
+
+    // go right at begin
     xv = 1;
 
     function game(time) {
@@ -74,7 +76,7 @@
         ctx.fillRect(0, 0, gs * unit, gs * unit);
 
         if (paused) {
-            // draw apple
+            // draw pause text
             ctx.fillStyle = "red";
             ctx.font = 'normal 50px Arial';
             ctx.fillText('PAUSED', 100, 220);
@@ -92,9 +94,6 @@
 
         requestAnimationFrame(game);
     }
-
-    // requestAnimationFrame(game); while (true) {     requestAnimationFrame(game);
-    // }
 
     function keydown(e) {
         switch (e.keyCode) {
