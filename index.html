@@ -14,8 +14,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
     <style>
-        html, body {margin: 0; max-height: 100%; overflow: hidden;}
-        body {position: fixed;}
+        html,
+        body {
+            margin: 0;
+            max-height: 100%;
+            overflow: hidden;
+        }
+
+        @media only screen and (max-width: 768px) {
+            canvas {
+                width: 100%
+            }
+        }
     </style>
 </head>
 
