@@ -143,6 +143,7 @@
     };
 
     function handleTouchMove(evt) {
+
         if (!xDown || !yDown) {
             return;
         }
