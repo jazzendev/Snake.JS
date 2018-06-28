@@ -102,23 +102,23 @@
         switch (e.keyCode) {
             case 37:
             case 65:
-                xv = -1;
+                xv = xv==1?1:-1;
                 yv = 0;
                 break;
             case 38:
             case 87:
                 xv = 0;
-                yv = -1;
+                yv = yv==1?1:-1;
                 break;
             case 39:
             case 68:
-                xv = 1;
+                xv = xv==-1?-1:1;
                 yv = 0;
                 break;
             case 40:
             case 83:
                 xv = 0;
-                yv = 1;
+                yv = yv==-1?-1:1;
                 break;
             case 27:
                 xv = yv = 0;
@@ -163,22 +163,22 @@
         if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
             if (xDiff > 0) {
                 /* left swipe */
-                xv = -1;
+                xv = xv==1?1:-1;
                 yv = 0;
             } else {
                 /* right swipe */
-                xv = 1;
+                xv = xv==-1?-1:1;
                 yv = 0;
             }
         } else {
             if (yDiff > 0) {
                 /* up swipe */
                 xv = 0;
-                yv = -1;
+                yv = yv==1?1:-1;
             } else {
                 /* down swipe */
                 xv = 0;
-                yv = 1;
+                yv = yv==-1?-1:1;
             }
         }
         /* reset values */
