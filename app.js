@@ -6,7 +6,7 @@
     let ax = ay = 15;
     let xv = yv = 0;
     let gs = unit = 20;
-    let tail = 5;
+    let tail = score = 5;
     let snake = [];
     let speed = step = 5;
     let previousFramTime = 0;
@@ -51,6 +51,9 @@
 
                 if (px == ax && py == ay) {
                     tail++;
+                    if (tail >= score) {
+                        score = tail;
+                    }
                     ax = Math.floor(Math.random() * gs);
                     ay = Math.floor(Math.random() * gs);
                 }
@@ -68,8 +71,8 @@
 
         ctx.fillStyle = "black";
         ctx.font = 'normal 15px Arial';
-        ctx.fillText('FPS ' + FPS, 20, 415);
-        ctx.fillText('Length ' + snake.length, 100, 415);
+        ctx.fillText(`FPS: ${FPS}    Length: ${snake.length}    High Score: ${score}`, 20, 415);
+
 
         // draw background
         ctx.fillStyle = "black";
